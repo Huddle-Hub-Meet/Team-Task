@@ -39,6 +39,7 @@ const VideoRoom = () => {
     ws.current.onmessage = (event) => {
       const data = JSON.parse(event.data);
       if (data.message) {
+
         // Update chat messages
         setMessages((prevMessages) => [
           ...prevMessages,
@@ -55,6 +56,7 @@ const VideoRoom = () => {
       console.error("WebSocket error:", error);
     };
 
+    
     // Clean up WebSocket on component unmount
     return () => {
       if (ws.current) ws.current.close();
