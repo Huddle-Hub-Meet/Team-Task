@@ -1,0 +1,192 @@
+/* badiya */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(224, 224, 239);
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Logo Section */
+.logo-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    width: 50px;
+    height: 50px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.logo-subtext {
+    font-size: 0.9rem;
+    color: gray;
+    margin: 0;
+}
+
+/* Main Content */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Left Section */
+.description {
+    flex: 1;
+    max-width: 500px;
+}
+
+.description h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.description p {
+    font-size: 1.125rem;
+    color: #535252;
+    line-height: 1.5;
+}
+
+.description p span {
+    color: rgb(189, 104, 118);
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.meet-button {
+    background-color: rgb(118, 118, 223);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    border: 1px solid rgb(151, 149, 149);
+    border-radius: 5px;
+    padding: 0 10px;
+    flex-grow: 1;
+    height: 40px;
+}
+
+.link-input {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.join-button {
+    background-color: rgb(224, 224, 239);
+    color: rgb(190, 97, 113);
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 40px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+/* Right Section - Carousel */
+.carousel {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+}
+
+.carousel-item {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.slider-image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid rgb(165, 165, 165);
+}
+
+.slider-text1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.slider-text2 {
+    font-size: 1rem;
+    color: #535252;
+    margin-top: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .description {
+        max-width: 100%;
+    }
+
+    .buttons {
+        flex-direction:column;
+        gap: 10px;
+    }
+
+    .carousel {
+        margin-top: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
