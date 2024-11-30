@@ -29,28 +29,36 @@ const Login = () => {
     setLoading(true);
     setError("");
 
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      toast.error("Invalid email format");
+      setLoading(false);
+      return;
+    }
+
     try {
-      const response = await axios.post(
-        "https://huddlehub-75fx.onrender.com/login/",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post("https://huddlehub-75fx.onrender.com/login/", {
+        email,
+        password,
+      });
 
-      console.log("Login successful:", response);
+      const token = response?.data;
 
-      toast.error(response.data)
-
-      const token = response.data;
-      localStorage.setItem("authToken", token);
-
-      //   localStorage.setItem("userEmail", email);
-      //   localStorage.setItem("userPassword", password);
+      localStorage.setItem("Login-Token", token);
       console.log("Token stored:", token);
+      toast.success("Login successful!");
+      navigate("/home");
+
     } catch (error) {
       console.error("Login failed:", error.response?.data || error.message);
-      setError(error.response?.data?.message || "An error occurred.");
+
+      if (error.response?.status === 401) {
+        toast.error("Wrong password");
+      } else if (error.response?.data?.message) {
+        toast.error(error.response?.data?.message);
+      } else {
+        toast.error("Login Unsuccessful. Try Again");
+      }
+
     } finally {
       setLoading(false);
     }
@@ -58,16 +66,22 @@ const Login = () => {
 
   return (
     <div className="wrapper bg-black">
+      <div className="logo-div">
+        <img src="src/assets/logo.png" alt="logo" width="40px" height="40px" />
+        <div>
+          <h1 className="logo">HUDDLE HUB</h1>
+          <p className="logo logo-subtext">- LET US CONNECT -</p>
+        </div>
+      </div>
+
       <div className="left-side">
         <img className="network" src={image} alt="network illustration" />
       </div>
       <div className="login-container">
-        <form
-          onSubmit={handleSubmit}
-          className="login-form flex flex-col gap-4"
-        >
+        <form onSubmit={handleSubmit} className="login-form flex flex-col gap-4">
           <h2>Welcome back!</h2>
           <p>Enter your email and password</p>
+
           <Input
             size="lg"
             startContent={<MailIcon />}
@@ -77,6 +91,7 @@ const Login = () => {
             variant="bordered"
             onChange={(e) => setEmail(e.target.value)}
           />
+
           <Input
             size="lg"
             startContent={<MailIcon />}
@@ -86,19 +101,33 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+
           <div className="form-options">
             <Checkbox>Remember me</Checkbox>
-
             <Link to="/reset-password" className="forgot-password">
               Forgot Password?
             </Link>
           </div>
-          <Button size="lg" color="secondary" type="submit" isLoading={loading} isDisabled={!email || !password}>
+
+          <Button
+            size="lg"
+            color="secondary"
+            type="submit"
+            isLoading={loading}
+            isDisabled={!email || !password}
+            onSubmit={<Link to="/home"></Link>}
+          >
             {loading ? "Logging in..." : "Login"}
+
           </Button>
+
           {error && <p className="error-message">{error}</p>}
         </form>
-        <div className="mt-4 text-right">Already have an account? <Link to="/signup" className="text-blue-600">Login</Link></div>
+
+        <div className="mt-4 text-right">
+          Create a new account ?{" "}
+          <Link to="/signup" className="text-blue-600">Sign Up</Link>
+        </div>
       </div>
     </div>
   );
