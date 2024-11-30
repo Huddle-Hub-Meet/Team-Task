@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(224, 224, 239);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular';
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.logo-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.logo-subtext {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+
+.description {
+    font-size: 24px;
+}
+
+.description h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.description p span {
+    color: rgb(189, 104, 118);
+    font-weight: 400;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.meet-button,
+.link-button,
+.join-button {
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    gap: 8px;
+}
+
+.meet-button {
+    background-color: rgb(118, 118, 223);
+    color: white;
+    border: none;
+}
+
+.link-button {
+    background-color: whitesmoke;
+    border: 1px solid rgb(151, 149, 149);
+}
+
+.link-input {
+    border: none;
+    height: 30px;
+    font-size: 16px;
+    padding-left: 10px;
+    color: black;
+    outline: none;
+    background-color: whitesmoke;
+}
+
+.join-button {
+    background-color: rgb(224, 224, 239);
+    color: rgb(190, 97, 113);
+    border: none;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-image {
+    width: 300px;
+    height: 300px;
+    margin-left: 8rem;
+    border-radius: 50%;
+    border: 1px solid rgb(165, 165, 165);
+}
+
+.slider-text1 {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.slider-text2 {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+/* Responsive Styles */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 80px;
+    }
+
+    .description {
+        font-size: 20px;
+        text-align: center;
+        min-width: 0;
+        margin-bottom: 20px;
+    }
+
+    .description h1 {
+        font-size: 28px;
+    }
+
+    .slider-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .carousel {
+        min-width: 100%;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .logo-subtext {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .description h1 {
+        font-size: 24px;
+    }
+
+    .slider-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content {
+        margin-top: 60px;
+        padding: 0 10px;
+    }
+
+    .carousel {
+        min-width: 100%;
+    }
+}
