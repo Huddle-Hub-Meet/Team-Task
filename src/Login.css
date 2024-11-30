@@ -17,7 +17,6 @@ body {
     justify-content: space-between;
     width: 100vw;
     height: 100vh;
-    /* max-width: 1200px; */
     background: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
@@ -89,25 +88,6 @@ img.network {
     color: #e74c3c;
     text-decoration: none;
 }
-
-/*hjhjbskvbkdvkjsjv*/
-
-/* button {
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1.125rem;
-    color: #fff;
-    background: linear-gradient(to right, #6a1b9a, #9c4dcc);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-} */
-
-/* button:hover {
-    background: linear-gradient(to right, #9c4dcc, #6a1b9a);
-} */
-
 
 @media (max-width: 768px) {
     .wrapper {

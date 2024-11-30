@@ -1,0 +1,124 @@
+.logo-div {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-start;
+    margin-bottom: 1px;
+}
+
+.logo-div h1,
+p {
+    margin: 0%;
+}
+
+.logo {
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.logo-subtext {
+    font-size: 17px;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/src/assets/Background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signup-form {
+    background: #ffffff;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 0%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.checkbox input {
+    width: 20px;
+}
+
+.checkbox label {
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: rgb(231, 121, 139);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(237, 38, 71);
+}
+
+.strength {
+    font-size: 0.8rem;
+}
+
+.strength.weak {
+    color: red;
+}
+
+.strength.medium {
+    color: orange;
+}
+
+.strength.strong {
+    color: green;
+}
+
+.weak {
+    color: red;
+}
+
+.medium {
+    color: orange;
+}
+
+.strong {
+    color: green;
+}
+
+.very-strong {
+    color: darkgreen;
+}
