@@ -61,6 +61,7 @@ const Signup = () => {
         try {
             // Make the API call to sign up
             const response = await fetch("https://huddlehub-75fx.onrender.com/signup/", {
+            // const response = await fetch("https://huddlehub.sugandhi.tech/signup/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -107,7 +108,7 @@ const Signup = () => {
 
                 setError("");
                 toast.success("Successfully signed up!");
-                navigate("/home");
+                navigate("/HomePage");
             } else {
                 setError("Signup failed. No token received.");
                 toast.error("An error occurred. Please try again.");
