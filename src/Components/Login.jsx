@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "/src/Login.css";
 import axios from "axios";
 import image from "/src/assets/image.png";
@@ -37,16 +37,17 @@ const Login = () => {
 
     try {
       const response = await axios.post("https://huddlehub-75fx.onrender.com/login/", {
+        // const response = await axios.post("https://huddlehub.sugandhi.tech/login/", {
         email,
         password,
       });
 
-      const token = response?.data;
+      const token = response?.data.msg;
 
       localStorage.setItem("Login-Token", token);
       console.log("Token stored:", token);
       toast.success("Login successful!");
-      navigate("/home");
+      navigate("/HomePage");
 
     } catch (error) {
       console.error("Login failed:", error.response?.data || error.message);
@@ -115,10 +116,8 @@ const Login = () => {
             type="submit"
             isLoading={loading}
             isDisabled={!email || !password}
-            onSubmit={<Link to="/home"></Link>}
           >
             {loading ? "Logging in..." : "Login"}
-
           </Button>
 
           {error && <p className="error-message">{error}</p>}
