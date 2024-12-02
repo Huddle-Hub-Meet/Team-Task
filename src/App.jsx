@@ -6,7 +6,7 @@ import VideoRoom from "./Components/VideoRoom";
 import Joinmeet from "./Components/Joinmeet";
 import Login from './Components/Login';
 import SignUp from "./Components/SignUp";
-import Left from './Components/left';
+import Left from './Components/Left';
 
 
 function App() {
